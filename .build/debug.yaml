@@ -1,0 +1,112 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "ColorThemeKit-arm64-apple-macosx-debug.module": ["<ColorThemeKit-arm64-apple-macosx-debug.module>"]
+  "ColorThemeKitPackageTests-arm64-apple-macosx-debug.module": ["<ColorThemeKitPackageTests-arm64-apple-macosx-debug.module>"]
+  "ColorThemeKitPackageTests-arm64-apple-macosx-debug.test": ["<ColorThemeKitPackageTests-arm64-apple-macosx-debug.test>"]
+  "ColorThemeKitTests-arm64-apple-macosx-debug.module": ["<ColorThemeKitTests-arm64-apple-macosx-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<ColorThemeKit-arm64-apple-macosx-debug.module>"]
+  "test": ["<ColorThemeKit-arm64-apple-macosx-debug.module>","<ColorThemeKitPackageTests-arm64-apple-macosx-debug.test>","<ColorThemeKitTests-arm64-apple-macosx-debug.module>"]
+default: "main"
+nodes:
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Tests/ColorThemeKitTests/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/Color+ARGB.swift","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/GradientTheme.swift","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/GradientThemeBackground.swift"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/sources"]
+    description: "Write auxiliary file /Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/sources"
+
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.derived/runner.swift"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/sources"]
+    description: "Write auxiliary file /Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/sources"
+
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.derived/runner.swift":
+    tool: test-entry-point-tool
+    inputs: []
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.derived/runner.swift"]
+
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/runner.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/ColorARGBTests.swift.o"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.product/Objects.LinkFileList"
+
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Tests/ColorThemeKitTests/ColorARGBTests.swift"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/sources"]
+    description: "Write auxiliary file /Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/sources"
+
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt"
+
+  "<ColorThemeKit-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKit.swiftmodule"]
+    outputs: ["<ColorThemeKit-arm64-apple-macosx-debug.module>"]
+
+  "<ColorThemeKitPackageTests-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/runner.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitPackageTests.swiftmodule"]
+    outputs: ["<ColorThemeKitPackageTests-arm64-apple-macosx-debug.module>"]
+
+  "<ColorThemeKitPackageTests-arm64-apple-macosx-debug.test>":
+    tool: phony
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.xctest/Contents/MacOS/ColorThemeKitPackageTests"]
+    outputs: ["<ColorThemeKitPackageTests-arm64-apple-macosx-debug.test>"]
+
+  "<ColorThemeKitTests-arm64-apple-macosx-debug.module>":
+    tool: phony
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/ColorARGBTests.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitTests.swiftmodule"]
+    outputs: ["<ColorThemeKitTests-arm64-apple-macosx-debug.module>"]
+
+  "C.ColorThemeKit-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/Color+ARGB.swift","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/GradientTheme.swift","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/GradientThemeBackground.swift","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/sources"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKit.swiftmodule"]
+    description: "Compiling Swift Module 'ColorThemeKit' (3 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ColorThemeKit","-emit-dependencies","-emit-module","-emit-module-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKit.swiftmodule","-output-file-map","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/sources","-I","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx15.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-j24","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/include/ColorThemeKit-Swift.h","-swift-version","6","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","colorthemekit"]
+
+  "C.ColorThemeKitPackageTests-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.derived/runner.swift","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitTests.swiftmodule","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/sources"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/runner.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitPackageTests.swiftmodule"]
+    description: "Compiling Swift Module 'ColorThemeKitPackageTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ColorThemeKitPackageTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitPackageTests.swiftmodule","-output-file-map","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/sources","-I","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx15.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j24","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-emit-objc-header","-emit-objc-header-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/include/ColorThemeKitPackageTests-Swift.h","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","colorthemekit"]
+
+  "C.ColorThemeKitPackageTests-arm64-apple-macosx-debug.test":
+    tool: shell
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.build/runner.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/ColorARGBTests.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.product/Objects.LinkFileList"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.xctest/Contents/MacOS/ColorThemeKitPackageTests"]
+    description: "Linking ./.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.xctest/Contents/MacOS/ColorThemeKitPackageTests"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-L","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug","-o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.xctest/Contents/MacOS/ColorThemeKitPackageTests","-module-name","ColorThemeKitPackageTests","-Xlinker","-no_warn_duplicate_libraries","-Xlinker","-bundle","-Xlinker","-rpath","-Xlinker","@loader_path/../../../","@/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitPackageTests.product/Objects.LinkFileList","-Xlinker","-rpath","-Xlinker","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift-6.2/macosx","-target","arm64-apple-macosx15.0","-Xlinker","-add_ast_path","-Xlinker","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKit.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitPackageTests.swiftmodule","-Xlinker","-add_ast_path","-Xlinker","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitTests.swiftmodule","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g"]
+
+  "C.ColorThemeKitTests-arm64-apple-macosx-debug.module":
+    tool: shell
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Tests/ColorThemeKitTests/ColorARGBTests.swift","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/swift-version--58304C5D6DBC2206.txt","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKit.swiftmodule","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/sources"]
+    outputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/ColorARGBTests.swift.o","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitTests.swiftmodule"]
+    description: "Compiling Swift Module 'ColorThemeKitTests' (1 sources)"
+    args: ["/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/swiftc","-module-name","ColorThemeKitTests","-emit-dependencies","-emit-module","-emit-module-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules/ColorThemeKitTests.swiftmodule","-output-file-map","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/output-file-map.json","-parse-as-library","-incremental","-c","@/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKitTests.build/sources","-I","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/Modules","-target","arm64-apple-macosx15.0","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/index/store","-Onone","-enable-testing","-Xfrontend","-enable-cross-import-overlays","-j24","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ModuleCache","-parseable-output","-parse-as-library","-swift-version","6","-plugin-path","/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/host/plugins/testing","-sdk","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-F","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-I","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-L","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/lib","-g","-Xcc","-isysroot","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk","-Xcc","-F","-Xcc","/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks","-Xcc","-fPIC","-Xcc","-g","-package-name","colorthemekit"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Tests/ColorThemeKitTests/","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Package.swift","/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

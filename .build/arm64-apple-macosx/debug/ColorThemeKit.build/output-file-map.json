@@ -1,0 +1,26 @@
+{
+  "": {
+    "swift-dependencies": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/primary.swiftdeps"
+  },
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/Color+ARGB.swift": {
+    "dependencies": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB.d",
+    "object": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB.swift.o",
+    "swiftmodule": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB~partial.swiftmodule",
+    "swift-dependencies": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB.swiftdeps",
+    "diagnostics": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/Color+ARGB.dia"
+  },
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/GradientTheme.swift": {
+    "dependencies": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme.d",
+    "object": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme.swift.o",
+    "swiftmodule": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme~partial.swiftmodule",
+    "swift-dependencies": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme.swiftdeps",
+    "diagnostics": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientTheme.dia"
+  },
+  "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/Sources/ColorThemeKit/GradientThemeBackground.swift": {
+    "dependencies": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground.d",
+    "object": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground.swift.o",
+    "swiftmodule": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground~partial.swiftmodule",
+    "swift-dependencies": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground.swiftdeps",
+    "diagnostics": "/Users/pbourget/XcodeProjects/GeoTravels/ColorThemeKit/.build/arm64-apple-macosx/debug/ColorThemeKit.build/GradientThemeBackground.dia"
+  }
+}
