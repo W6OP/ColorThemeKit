@@ -31,7 +31,7 @@ Add the package to your project via **File → Add Package Dependencies…** in 
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/<your-account>/ColorThemeKit.git", from: "1.0.0")
+    .package(url: "https://github.com/w6op/ColorThemeKit.git", from: "1.0.0")
 ]
 ```
 
