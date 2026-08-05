@@ -9,6 +9,7 @@ The themes are defined entirely in constant sRGB components — no UIKit/AppKit 
 - **`GradientTheme`** — nine ready-made gradient themes (linear and mesh), each with a display name suitable for menus.
 - **Automatic light/dark adaptation** — themes read the environment's `colorScheme`; several provide distinct light and dark palettes.
 - **Drop-in gradient view** — `theme.gradient` returns a `View` you can use directly as a `.background(...)`.
+- **Accessibility-aware themed backgrounds** — `.themedBackground(_:frosted:)` paints a theme behind a `List`/`Form` with a material legibility scrim, and defers to the system when **Increase Contrast** is on.
 - **`Color(argb:)` / `Color.toArgb()`** — pack and unpack a `Color` as a 32-bit `0xAARRGGBB` integer, handy for persisting user-selected colors. Uses the SwiftUI-native `Color.resolve(in:)` API.
 
 ## Requirements
@@ -90,6 +91,29 @@ struct ThemedView: View {
 }
 ```
 
+### Accessibility-aware themed backgrounds
+
+For screens whose content is a `List` or `Form`, use `.themedBackground(_:frosted:)`. It draws the gradient behind the (transparent) scroll content with a material scrim so text keeps system-guaranteed contrast. When the user enables **Increase Contrast**, or picks `.none`, the decorative gradient is skipped and the system's opaque surfaces are used:
+
+```swift
+struct RootScreen: View {
+    @AppStorage("selectedGradientTheme") private var themeID = GradientTheme.skyNestLite.rawValue
+    @AppStorage("themedBackgroundFrosted") private var isFrosted = true
+
+    var body: some View {
+        List {
+            // ...
+        }
+        .themedBackground(
+            GradientTheme.theme(forStoredRawValue: themeID) ?? .skyNestLite,
+            frosted: isFrosted
+        )
+    }
+}
+```
+
+Pass `frosted: false` to use `.thinMaterial` (letting the gradient show through more vividly) instead of the default `.regularMaterial`.
+
 ### Accessing raw stop colors
 
 If you need the individual gradient stops (for example, to build a matching scrim), ask for them by color scheme:
@@ -125,15 +149,21 @@ The round-trip is lossless for standard sRGB colors — each channel is resolved
 
 | Case              | Display name       | Style  | Adapts to scheme |
 | ----------------- | ------------------ | ------ | ---------------- |
-| `natural`         | Natural            | Linear | Yes              |
-| `skyNest`         | SkyNest            | Linear | Yes              |
-| `glacier`         | Glacier            | Mesh   | Yes              |
-| `lightBlueGreen`  | Light Blue Green   | Linear | No               |
-| `darkBlueGreen`   | Dark Blue Green    | Linear | No               |
-| `lightBlueOrange` | Light Blue Orange  | Linear | No               |
-| `darkBlueOrange`  | Dark Blue Orange   | Linear | No               |
-| `lightRoseGold`   | Light Rose Gold    | Linear | No               |
-| `darkSlateBerry`  | Dark Slate Berry   | Linear | No               |
+| `none`            | No Background       | —      | —                |
+| `skyNest`         | SkyNest Default     | Linear | Yes              |
+| `skyNestLite`     | SkyNest Lite        | Linear | Yes              |
+| `sunrise`         | Sunrise             | Linear | Yes              |
+| `ocean`           | Ocean               | Linear | Yes              |
+| `forest`          | Forest              | Linear | Yes              |
+| `graphite`        | Graphite            | Linear | Yes              |
+| `natural`         | Natural             | Linear | Yes              |
+| `glacier`         | Glacier             | Mesh   | Yes              |
+| `lightBlueGreen`  | Light Blue Green    | Linear | No               |
+| `darkBlueGreen`   | Dark Blue Green     | Linear | No               |
+| `lightBlueOrange` | Light Blue Orange   | Linear | No               |
+| `darkBlueOrange`  | Dark Blue Orange    | Linear | No               |
+| `lightRoseGold`   | Light Rose Gold     | Linear | No               |
+| `darkSlateBerry`  | Dark Slate Berry    | Linear | No               |
 
 ## License
 
