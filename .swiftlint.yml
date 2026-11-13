@@ -1,0 +1,6 @@
+# Preserve existing source while enforcing lint on additions.
+included:
+  - Sources
+  - Tests
+  - Package.swift
+baseline: .swiftlint-baseline.json
